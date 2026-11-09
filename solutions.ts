@@ -24,7 +24,7 @@ type Coordinate = readonly [
   locationName: string,
 ];
 function formatCoordinate(coordinate: Coordinate): string {
-  return `Location: ${coordinate[2]} (${coordinate[0].toFixed(2)}, ${coordinate[1].toFixed(2)})`;
+  return `Location: ${coordinate[2]} (${coordinate[0]}, ${coordinate[1]})`;
 }
 
 function concatenateArrays<T>(...arrays: T[][]): T[] {
@@ -88,9 +88,9 @@ const validateAgeAsync = async (age: number): Promise<string> => {
     throw new Error(`Access Denied: Must be 18 or older`);
   }
 
-  return new Promise<string>((reslove) => {
+  return new Promise<string>((resolve) => {
     setTimeout(() => {
-      reslove("Access Granted");
+      resolve("Access Granted");
     }, 1000);
   });
 };
